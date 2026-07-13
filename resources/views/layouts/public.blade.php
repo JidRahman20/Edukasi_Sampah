@@ -597,30 +597,14 @@
                                 <div style="font-size:11px;color:#9ca3af;">Lihat semua konten edukasi</div>
                             </div>
                         </a>
-                        <a href="{{ route('materi.pengertian') }}" class="dropdown-link">
+                        @foreach($globalMaterials as $m)
+                        <a href="{{ route('materi.show', $m->slug) }}" class="dropdown-link">
                             <div class="dropdown-icon" style="background:#fef3c7;">📖</div>
                             <div>
-                                <div style="font-weight:600;font-size:13px;">Pengertian Sampah</div>
+                                <div style="font-weight:600;font-size:13px;">{{ $m->title }}</div>
                             </div>
                         </a>
-                        <a href="{{ route('materi.jenis') }}" class="dropdown-link">
-                            <div class="dropdown-icon" style="background:#dbeafe;">🗂️</div>
-                            <div>
-                                <div style="font-weight:600;font-size:13px;">Jenis-Jenis Sampah</div>
-                            </div>
-                        </a>
-                        <a href="{{ route('materi.pemilahan') }}" class="dropdown-link">
-                            <div class="dropdown-icon" style="background:#ede9fe;">♻️</div>
-                            <div>
-                                <div style="font-weight:600;font-size:13px;">Cara Pemilahan</div>
-                            </div>
-                        </a>
-                        <a href="{{ route('materi.tiga-r') }}" class="dropdown-link">
-                            <div class="dropdown-icon" style="background:#fce7f3;">🔄</div>
-                            <div>
-                                <div style="font-weight:600;font-size:13px;">Prinsip 3R</div>
-                            </div>
-                        </a>
+                        @endforeach
                     </div>
                 </li>
                 <li class="nav-item">
@@ -667,10 +651,9 @@
         <a href="{{ route('tentang') }}" class="mobile-nav-link">ℹ️ Tentang Program</a>
         <div class="mobile-section-label">Materi Edukasi</div>
         <a href="{{ route('materi.index') }}" class="mobile-nav-link">📚 Semua Materi</a>
-        <a href="{{ route('materi.pengertian') }}" class="mobile-nav-link">📖 Pengertian Sampah</a>
-        <a href="{{ route('materi.jenis') }}" class="mobile-nav-link">🗂️ Jenis-Jenis Sampah</a>
-        <a href="{{ route('materi.pemilahan') }}" class="mobile-nav-link">♻️ Cara Pemilahan</a>
-        <a href="{{ route('materi.tiga-r') }}" class="mobile-nav-link">🔄 Prinsip 3R</a>
+        @foreach($globalMaterials as $m)
+        <a href="{{ route('materi.show', $m->slug) }}" class="mobile-nav-link">📖 {{ $m->title }}</a>
+        @endforeach
         <div class="mobile-section-label">Lainnya</div>
         <a href="{{ route('galeri') }}" class="mobile-nav-link">🖼️ Galeri Foto</a>
         <a href="{{ route('video') }}" class="mobile-nav-link">🎬 Video Edukasi</a>
@@ -715,10 +698,9 @@
                     <div class="footer-heading">Materi</div>
                     <ul class="footer-links">
                         <li><a href="{{ route('materi.index') }}">Semua Materi</a></li>
-                        <li><a href="{{ route('materi.pengertian') }}">Pengertian Sampah</a></li>
-                        <li><a href="{{ route('materi.jenis') }}">Jenis Sampah</a></li>
-                        <li><a href="{{ route('materi.pemilahan') }}">Cara Pemilahan</a></li>
-                        <li><a href="{{ route('materi.tiga-r') }}">Prinsip 3R</a></li>
+                        @foreach($globalMaterials as $m)
+                        <li><a href="{{ route('materi.show', $m->slug) }}">{{ $m->title }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
                 <div>

@@ -478,34 +478,15 @@
                 <a href="{{ route('materi.index') }}" class="btn btn-primary">Lihat Semua Materi →</a>
             </div>
             <div class="materi-grid">
-                <a href="{{ route('materi.pengertian') }}" class="materi-card">
-                    <div class="materi-card-icon" style="background:#fef3c7;">📖</div>
+                @php $icons = ['📖', '🗂️', '♻️', '🔄']; $colors = ['#fef3c7', '#dbeafe', '#ede9fe', '#fce7f3']; @endphp
+                @foreach($materials as $index => $m)
+                <a href="{{ route('materi.show', $m->slug) }}" class="materi-card">
+                    <div class="materi-card-icon" style="background:{{ $colors[$index % count($colors)] }};">{{ $icons[$index % count($icons)] }}</div>
                     <div>
-                        <div class="materi-card-title">Pengertian Sampah</div>
-                        <div class="materi-card-desc">Definisi dan konsep dasar sampah</div>
+                        <div class="materi-card-title">{{ $m->title }}</div>
                     </div>
                 </a>
-                <a href="{{ route('materi.jenis') }}" class="materi-card">
-                    <div class="materi-card-icon" style="background:#dbeafe;">🗂️</div>
-                    <div>
-                        <div class="materi-card-title">Jenis Sampah</div>
-                        <div class="materi-card-desc">Organik, Anorganik, dan B3</div>
-                    </div>
-                </a>
-                <a href="{{ route('materi.pemilahan') }}" class="materi-card">
-                    <div class="materi-card-icon" style="background:#ede9fe;">♻️</div>
-                    <div>
-                        <div class="materi-card-title">Cara Pemilahan</div>
-                        <div class="materi-card-desc">Langkah memilah sampah dengan benar</div>
-                    </div>
-                </a>
-                <a href="{{ route('materi.tiga-r') }}" class="materi-card">
-                    <div class="materi-card-icon" style="background:#fce7f3;">🔄</div>
-                    <div>
-                        <div class="materi-card-title">Prinsip 3R</div>
-                        <div class="materi-card-desc">Reduce, Reuse, Recycle</div>
-                    </div>
-                </a>
+                @endforeach
             </div>
         </div>
     </div>

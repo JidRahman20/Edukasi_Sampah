@@ -395,6 +395,13 @@
                 Kelola Materi
             </a>
 
+            <a href="{{ route('admin.galleries.index') }}" 
+               class="nav-link {{ request()->routeIs('admin.galleries.*') ? 'active' : '' }}" 
+               id="nav-galleries">
+                <span class="nav-icon">🖼️</span>
+                Kelola Galeri
+            </a>
+
             <a href="{{ route('admin.videos.index') }}" 
                class="nav-link {{ request()->routeIs('admin.videos.*') ? 'active' : '' }}" 
                id="nav-videos">
@@ -402,11 +409,11 @@
                 Kelola Video
             </a>
 
-            <a href="{{ route('admin.galleries.index') }}" 
-               class="nav-link {{ request()->routeIs('admin.galleries.*') ? 'active' : '' }}" 
-               id="nav-galleries">
-                <span class="nav-icon">🖼️</span>
-                Kelola Galeri
+            <a href="{{ route('admin.tips.index') }}" 
+               class="nav-link {{ request()->routeIs('admin.tips.*') ? 'active' : '' }}" 
+               id="nav-tips">
+                <span class="nav-icon">💡</span>
+                Kelola Tips
             </a>
 
             <a href="{{ route('admin.evaluations.form') }}" 
@@ -418,12 +425,7 @@
 
             <div class="nav-section-label" style="margin-top:12px;">Pemantauan</div>
 
-            <a href="{{ route('admin.visitors.index') }}" 
-               class="nav-link {{ request()->routeIs('admin.visitors.*') ? 'active' : '' }}" 
-               id="nav-visitors">
-                <span class="nav-icon">👥</span>
-                Monitoring Pengunjung
-            </a>
+
 
             <a href="{{ route('admin.evaluations.index') }}" 
                class="nav-link {{ request()->routeIs('admin.evaluations.index') ? 'active' : '' }}" 

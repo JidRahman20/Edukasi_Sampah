@@ -18,10 +18,7 @@ Route::get('/tentang', [PublicController::class, 'tentang'])->name('tentang');
 // Materi Edukasi
 Route::prefix('materi')->name('materi.')->group(function () {
     Route::get('/', [PublicController::class, 'materiIndex'])->name('index');
-    Route::get('/pengertian-sampah', [PublicController::class, 'pengertian'])->name('pengertian');
-    Route::get('/jenis-sampah', [PublicController::class, 'jenis'])->name('jenis');
-    Route::get('/cara-pemilahan', [PublicController::class, 'pemilahan'])->name('pemilahan');
-    Route::get('/prinsip-3r', [PublicController::class, 'tigaR'])->name('tiga-r');
+    Route::get('/{slug}', [PublicController::class, 'materiShow'])->name('show');
 });
 
 Route::get('/galeri', [PublicController::class, 'galeri'])->name('galeri');
@@ -50,10 +47,11 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::resource('materials', \App\Http\Controllers\Admin\MaterialController::class);
         Route::resource('videos', \App\Http\Controllers\Admin\VideoController::class);
         Route::resource('galleries', \App\Http\Controllers\Admin\GalleryController::class);
+        Route::resource('tips', \App\Http\Controllers\Admin\TipController::class);
         
         Route::get('evaluations/form', [\App\Http\Controllers\Admin\EvaluationController::class, 'form'])->name('evaluations.form');
+        Route::post('evaluations/form', [\App\Http\Controllers\Admin\EvaluationController::class, 'updateForm'])->name('evaluations.form.update');
         Route::get('evaluations', [\App\Http\Controllers\Admin\EvaluationController::class, 'index'])->name('evaluations.index');
-        Route::get('visitors', [\App\Http\Controllers\Admin\VisitorController::class, 'index'])->name('visitors.index');
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
