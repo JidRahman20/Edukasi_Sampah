@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* ======================================================
@@ -566,7 +567,7 @@
         <div class="nav-container">
             <!-- Brand -->
             <a href="{{ route('beranda') }}" class="nav-brand">
-                <div class="nav-brand-icon">🌿</div>
+                <div class="nav-brand-icon"><i class="fa-solid fa-leaf" style="color: white;"></i></div>
                 <div>
                     <div class="nav-brand-text">EduSampah</div>
                     <div class="nav-brand-sub">Edukasi Lingkungan</div>
@@ -591,7 +592,7 @@
                     </span>
                     <div class="nav-dropdown">
                         <a href="{{ route('materi.index') }}" class="dropdown-link">
-                            <div class="dropdown-icon" style="background:#dcfce7;">📚</div>
+                            <div class="dropdown-icon" style="background:#dcfce7; color: #15803d;"><i class="fa-solid fa-book"></i></div>
                             <div>
                                 <div style="font-weight:600;font-size:13px;">Semua Materi</div>
                                 <div style="font-size:11px;color:#9ca3af;">Lihat semua konten edukasi</div>
@@ -599,7 +600,7 @@
                         </a>
                         @foreach($globalMaterials as $m)
                         <a href="{{ route('materi.show', $m->slug) }}" class="dropdown-link">
-                            <div class="dropdown-icon" style="background:#fef3c7;">📖</div>
+                            <div class="dropdown-icon" style="background:#fef3c7; color: #b45309;"><i class="fa-solid fa-book-open"></i></div>
                             <div>
                                 <div style="font-weight:600;font-size:13px;">{{ $m->title }}</div>
                             </div>
@@ -632,7 +633,7 @@
             <!-- Right Actions -->
             <div class="nav-right" style="display:flex;align-items:center;gap:8px;">
                 <a href="{{ route('evaluasi') }}" class="nav-cta">
-                    ✏️ Evaluasi Diri
+                    <i class="fa-solid fa-pen-to-square"></i> Evaluasi Diri
                 </a>
             </div>
 
@@ -647,19 +648,19 @@
 
     <!-- MOBILE NAV -->
     <div class="mobile-nav" id="mobileNav">
-        <a href="{{ route('beranda') }}" class="mobile-nav-link">🏠 Beranda</a>
-        <a href="{{ route('tentang') }}" class="mobile-nav-link">ℹ️ Tentang Program</a>
+        <a href="{{ route('beranda') }}" class="mobile-nav-link"><i class="fa-solid fa-house fa-fw"></i> Beranda</a>
+        <a href="{{ route('tentang') }}" class="mobile-nav-link"><i class="fa-solid fa-circle-info fa-fw"></i> Tentang Program</a>
         <div class="mobile-section-label">Materi Edukasi</div>
-        <a href="{{ route('materi.index') }}" class="mobile-nav-link">📚 Semua Materi</a>
+        <a href="{{ route('materi.index') }}" class="mobile-nav-link"><i class="fa-solid fa-book fa-fw"></i> Semua Materi</a>
         @foreach($globalMaterials as $m)
-        <a href="{{ route('materi.show', $m->slug) }}" class="mobile-nav-link">📖 {{ $m->title }}</a>
+        <a href="{{ route('materi.show', $m->slug) }}" class="mobile-nav-link"><i class="fa-solid fa-book-open fa-fw"></i> {{ $m->title }}</a>
         @endforeach
         <div class="mobile-section-label">Lainnya</div>
-        <a href="{{ route('galeri') }}" class="mobile-nav-link">🖼️ Galeri Foto</a>
-        <a href="{{ route('video') }}" class="mobile-nav-link">🎬 Video Edukasi</a>
-        <a href="{{ route('tips') }}" class="mobile-nav-link">💡 Tips Pengelolaan</a>
-        <a href="{{ route('evaluasi') }}" class="mobile-nav-link" style="color:var(--green-700);font-weight:700;">✏️ Formulir Evaluasi</a>
-        <a href="{{ route('kontak') }}" class="mobile-nav-link">📞 Kontak</a>
+        <a href="{{ route('galeri') }}" class="mobile-nav-link"><i class="fa-solid fa-images fa-fw"></i> Galeri Foto</a>
+        <a href="{{ route('video') }}" class="mobile-nav-link"><i class="fa-solid fa-circle-play fa-fw"></i> Video Edukasi</a>
+        <a href="{{ route('tips') }}" class="mobile-nav-link"><i class="fa-solid fa-lightbulb fa-fw"></i> Tips Pengelolaan</a>
+        <a href="{{ route('evaluasi') }}" class="mobile-nav-link" style="color:var(--green-700);font-weight:700;"><i class="fa-solid fa-pen-to-square fa-fw"></i> Formulir Evaluasi</a>
+        <a href="{{ route('kontak') }}" class="mobile-nav-link"><i class="fa-solid fa-phone fa-fw"></i> Kontak</a>
     </div>
 
     <!-- MAIN -->
@@ -672,16 +673,16 @@
         <div class="footer-container">
             <div class="footer-grid">
                 <div>
-                    <div class="footer-brand-icon">🌿</div>
+                    <div class="footer-brand-icon"><i class="fa-solid fa-leaf" style="color: white;"></i></div>
                     <div class="footer-brand-name">EduSampah</div>
                     <p class="footer-desc">
                         Platform edukasi pengelolaan sampah untuk mewujudkan lingkungan yang bersih, sehat, dan berkelanjutan bagi generasi mendatang.
                     </p>
                     <div class="footer-socials">
-                        <a href="#" class="social-btn">📘</a>
-                        <a href="#" class="social-btn">📸</a>
-                        <a href="#" class="social-btn">🐦</a>
-                        <a href="#" class="social-btn">▶️</a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="social-btn"><i class="fa-brands fa-youtube"></i></a>
                     </div>
                 </div>
                 <div>
@@ -716,7 +717,7 @@
 
             <div class="footer-bottom">
                 <span>© {{ date('Y') }} EduSampah — Edukasi Pengelolaan Sampah. Hak cipta dilindungi.</span>
-                <span>🌱 Bersama menjaga bumi lebih bersih</span>
+                <span><i class="fa-solid fa-seedling"></i> Bersama menjaga bumi lebih bersih</span>
             </div>
         </div>
     </footer>
