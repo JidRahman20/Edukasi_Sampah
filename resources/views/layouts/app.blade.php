@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
@@ -371,7 +372,7 @@
     <!-- Sidebar -->
     <aside class="sidebar" id="sidebar">
         <div class="sidebar-logo">
-            <div class="sidebar-logo-icon">🌿</div>
+            <div class="sidebar-logo-icon"><i class="fa-solid fa-leaf"></i></div>
             <div>
                 <div class="sidebar-logo-text">Admin Panel</div>
                 <div class="sidebar-logo-sub">EDUKASI SAMPAH</div>
@@ -382,7 +383,7 @@
             <a href="{{ route('admin.dashboard') }}"
                class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}"
                id="nav-dashboard">
-                <span class="nav-icon">📊</span>
+                <span class="nav-icon"><i class="fa-solid fa-chart-simple"></i></span>
                 Dashboard Statistik
             </a>
 
@@ -391,35 +392,35 @@
             <a href="{{ route('admin.materials.index') }}" 
                class="nav-link {{ request()->routeIs('admin.materials.*') ? 'active' : '' }}" 
                id="nav-materials">
-                <span class="nav-icon">📚</span>
+                <span class="nav-icon"><i class="fa-solid fa-book"></i></span>
                 Kelola Materi
             </a>
 
             <a href="{{ route('admin.galleries.index') }}" 
                class="nav-link {{ request()->routeIs('admin.galleries.*') ? 'active' : '' }}" 
                id="nav-galleries">
-                <span class="nav-icon">🖼️</span>
+                <span class="nav-icon"><i class="fa-solid fa-images"></i></span>
                 Kelola Galeri
             </a>
 
             <a href="{{ route('admin.videos.index') }}" 
                class="nav-link {{ request()->routeIs('admin.videos.*') ? 'active' : '' }}" 
                id="nav-videos">
-                <span class="nav-icon">🎥</span>
+                <span class="nav-icon"><i class="fa-solid fa-video"></i></span>
                 Kelola Video
             </a>
 
             <a href="{{ route('admin.tips.index') }}" 
                class="nav-link {{ request()->routeIs('admin.tips.*') ? 'active' : '' }}" 
                id="nav-tips">
-                <span class="nav-icon">💡</span>
+                <span class="nav-icon"><i class="fa-solid fa-lightbulb"></i></span>
                 Kelola Tips
             </a>
 
             <a href="{{ route('admin.evaluations.form') }}" 
                class="nav-link {{ request()->routeIs('admin.evaluations.form') ? 'active' : '' }}" 
                id="nav-evaluations-form">
-                <span class="nav-icon">📝</span>
+                <span class="nav-icon"><i class="fa-solid fa-pen-to-square"></i></span>
                 Kelola Form Evaluasi
             </a>
 
@@ -430,7 +431,7 @@
             <a href="{{ route('admin.evaluations.index') }}" 
                class="nav-link {{ request()->routeIs('admin.evaluations.index') ? 'active' : '' }}" 
                id="nav-evaluations-results">
-                <span class="nav-icon">📈</span>
+                <span class="nav-icon"><i class="fa-solid fa-chart-line"></i></span>
                 Monitoring Hasil Evaluasi
             </a>
             
@@ -439,7 +440,7 @@
             <a href="{{ route('admin.profile.edit') }}"
                class="nav-link {{ request()->routeIs('admin.profile.*') ? 'active' : '' }}"
                id="nav-profile">
-                <span class="nav-icon">👤</span>
+                <span class="nav-icon"><i class="fa-solid fa-user"></i></span>
                 Profil Saya
             </a>
         </nav>
@@ -456,10 +457,10 @@
         </div>
         <div class="topbar-right">
             <a href="#" class="topbar-btn" title="Notifikasi">
-                🔔
+                <i class="fa-regular fa-bell"></i>
                 <span class="notif-dot"></span>
             </a>
-            <a href="#" class="topbar-btn" title="Cari">🔍</a>
+            <a href="#" class="topbar-btn" title="Cari"><i class="fa-solid fa-magnifying-glass"></i></a>
             
             <!-- User Profile Dropdown / Topbar -->
             <div style="position: relative; display: inline-block;">
@@ -475,7 +476,7 @@
             <form method="POST" action="{{ route('logout') }}" style="display:inline;">
                 @csrf
                 <button type="submit" class="topbar-btn" style="color:var(--danger);" title="Keluar">
-                    🚪
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
                 </button>
             </form>
         </div>
